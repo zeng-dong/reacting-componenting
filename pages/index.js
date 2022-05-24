@@ -9,6 +9,17 @@ function Session({ title, roomName }) {
     );
 }
 
+function Sessions({ sessions }) {
+    return (
+        <div className="sessionBox card h-250">
+            <Session
+                title={sessions[0].title}
+                roomName={sessions[0].room.name}
+            />
+        </div>
+    );
+}
+
 const IndexPage = () => {
     return (
         <div className="container speakers-list">
@@ -54,12 +65,7 @@ const IndexPage = () => {
                                     </div>
                                 </div>
 
-                                <div className="sessionBox card h-250">
-                                    <Session
-                                        title={sessions[0].title}
-                                        roomName={sessions[0].room.name}
-                                    />
-                                </div>
+                                <Sessions sessions={sessions} />
                             </div>
                         </div>
                     );
