@@ -67,21 +67,12 @@ function Speaker({ speaker }) {
     return (
         <div className="col-xs-12 col-sm-12 col-md-6 col-lg-4 col-sm-12 col-xs-12">
             <div className="card card-height p-4 mt-4">
-                <SpeakerImage id={id} first={first} last={last} />
-
-                {/* <SpeakerDemographics
-                                    first={first}
-                                    last={last}
-                                    bio={bio}
-                                    company={company}
-                                    twitterHandle={twitterHandle}
-                                    favorite={favorite}
-                                /> */}
+                <SpeakerImage {...speaker} />
 
                 <SpeakerDemographics {...speaker} />
-
-                <Sessions sessions={sessions} />
             </div>
+
+            <Sessions sessions={sessions} />
         </div>
     );
 }
